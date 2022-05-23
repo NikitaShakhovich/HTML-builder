@@ -22,13 +22,11 @@ const askQuestion = () => {
     }
   };
 
-  rl.question('Какие методы массивов вы знаете? отправляйте методы по одному!', function (name) {
+  rl.question('Как Вам Node.js??!', function (name) {
     checkQuestion(name);
-    // console.log('в руках', name);
     fs.appendFile(path.join(__dirname, 'text.txt'), ` ${name}`, err => {
       if (err) throw err;
     });
-    // console.log('evttttt', evt);
   });
 
   rl.on('close', function () {
@@ -38,7 +36,6 @@ const askQuestion = () => {
 
   rl.on('line', (input) => {
     checkQuestion(input);
-    // console.log('123', input);
     fs.appendFile(path.join(__dirname, 'text.txt'), ` ${input}`, err => {
       if (err) throw err;
     });
